@@ -14,8 +14,8 @@ import img7 from "../../../assets/brandsImg/start_people.png";
 
 const Brands = () => {
   return (
-    <div className="m-10">
-      <h3 className="text-[#03373D] text-[28px] font-extrabold text-center">
+    <div className="mx-35 my-24">
+      <h3 className="text-[#03373D] mb-10 text-[28px] font-extrabold text-center">
         We've helped thousands of sales teams
       </h3>
 
@@ -23,14 +23,15 @@ const Brands = () => {
         loop={true}
         modules={[Pagination, Autoplay]}
         slidesPerView={4}
+        
         centeredSlides={true}
         autoplay={{
           delay: 1000,
           disableOnInteraction: false,
         }}
-        spaceBetween={50}
+        
         grabCursor={true}
-        className="m-10">
+        className="m-5 ">
         <SwiperSlide>
           <img src={img1} alt="" />
         </SwiperSlide>

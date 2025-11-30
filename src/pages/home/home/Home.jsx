@@ -3,6 +3,8 @@ import Banner from '../banner/Banner';
 import BannerCard from '../banner/BannerCard';
 import { Service } from '../service/Service';
 import Brands from '../brands/Brands';
+import Trdelesup from '../trackdelesup/Trdelesup';
+import Marchant from '../marchant/Marchant';
 
 const Home = () => {
     return (
@@ -12,6 +14,8 @@ const Home = () => {
             <BannerCard></BannerCard>
             <Service></Service>
             <Brands></Brands>
+            <Trdelesup></Trdelesup>
+            <Marchant></Marchant>
         </div>
     );
 };
