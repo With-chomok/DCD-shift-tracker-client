@@ -1,12 +1,25 @@
 import React from "react";
 import Logo from "../../../components/Logo/Logo";
 import { NavLink } from "react-router";
-
+import exLogo from "../../../assets/ex.png";
 export const Navbar = () => {
   const links = (
     <>
-      <li><NavLink>Services</NavLink></li>
-      <li><NavLink>Services</NavLink></li>
+      <li>
+        <NavLink>Services</NavLink>
+      </li>
+      <li>
+        <NavLink>Coverage</NavLink>
+      </li>
+      <li>
+        <NavLink>About Us</NavLink>
+      </li>
+      <li>
+        <NavLink>Pricing</NavLink>
+      </li>
+      <li>
+        <NavLink>Be a Rider</NavLink>
+      </li>
     </>
   );
   return (
@@ -35,17 +48,19 @@ export const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">
+        <a className=" text-xl">
           <Logo></Logo>
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end gap-3">
+        <a className="white-button">Sign In</a>
+        <div className="flex"> 
+          <a className="amber-button"> Be a rider</a>
+          <img className="w-14 ml-0" src={exLogo} alt="" />
+        </div>
       </div>
     </div>
   );

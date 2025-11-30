@@ -20,3 +20,22 @@ font-size: 40px;
 color: white;
 font-weight: bold;
 }
+.amber-button{
+  font-size: 20;
+  color: #1F1F1F;
+  font-weight: bold;
+  background-color: #CAEB66;
+  padding:14px 32px ;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.white-button{
+  font-size: 20;
+  color: #606060;
+  font-weight: bold;
+  background-color: #FFFFFF;
+  padding:14px 32px ;
+  border: 2px solid #DADADA;
+  border-radius: 12px;
+  cursor: pointer;
+}

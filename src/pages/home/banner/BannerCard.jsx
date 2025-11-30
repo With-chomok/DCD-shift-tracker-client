@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../../../assets/delivery-van.png";
+import img from "../../../assets/bookingIcon.png";
 const BannerCard = () => {
   const cardInfo = [
     {
@@ -39,7 +39,7 @@ const BannerCard = () => {
           <div
             key={data.id}
             className="p-8 bg-white rounded-2xl text-center flex flex-col justify-between h-full shadow-lg">
-            <img src={data.image} className="w-20 mx-auto mb-3" alt="" />
+            <img src={data.image} className="w-16 mx-auto mb-3" alt="" />
             <h2 className="text-xl font-bold mb-2">{data.title}</h2>
             <p className="text-[#606060]">{data.description}</p>
           </div>
