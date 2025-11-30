@@ -32,7 +32,7 @@ const BannerCard = () => {
     },
   ];
   return (
-    <div className="m-10">
+    <div className="mx-35">
       <h1 className="m-2 font-bold text-2xl">How it Works</h1>
       <div className="grid md:grid-cols-4 grid-cols-1 gap-7">
         {cardInfo.map((data) => (
@@ -41,7 +41,7 @@ const BannerCard = () => {
             className="p-8 bg-white rounded-2xl text-center flex flex-col justify-between h-full shadow-lg">
             <img src={data.image} className="w-20 mx-auto mb-3" alt="" />
             <h2 className="text-xl font-bold mb-2">{data.title}</h2>
-            <p className="text-gray-600">{data.description}</p>
+            <p className="text-[#606060]">{data.description}</p>
           </div>
         ))}
       </div>
