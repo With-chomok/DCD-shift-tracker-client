@@ -5,6 +5,7 @@ import { Service } from '../service/Service';
 import Brands from '../brands/Brands';
 import Trdelesup from '../trackdelesup/Trdelesup';
 import Marchant from '../marchant/Marchant';
+import CustomerSay from '../customertalk/CustomerSay';
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <Brands></Brands>
             <Trdelesup></Trdelesup>
             <Marchant></Marchant>
+            <CustomerSay></CustomerSay>
         </div>
     );
 };
