@@ -31,10 +31,13 @@ const Trdelesup = () => {
       {cardInfo.map((data) => (
         <div
           key={data.id}
-          className="p-8 flex space-y-3 gap-12 justify-between items-center rounded-2xl bg-[#FFFFFF]">
-          <div className=" ">
+          className="p-8 flex space-y-3 gap-12 justify-around items-center rounded-2xl bg-[#FFFFFF]">
+          <div>
             <img className="w-48" src={data.image} alt="" />
           </div>
+          
+            <div className="border-b border-dashed border-teal-600 my-6 rotate-90"></div>
+          
           <div className="flex flex-col gap-3">
             <h3 className="text-2xl font-extrabold text-[#03373D]">
               {data.title}

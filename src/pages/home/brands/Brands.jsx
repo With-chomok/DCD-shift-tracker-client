@@ -15,7 +15,7 @@ import img7 from "../../../assets/brandsImg/start_people.png";
 const Brands = () => {
   return (
     <div className="mx-35 my-24">
-      <h3 className="text-[#03373D] mb-10 text-[28px] font-extrabold text-center">
+      <h3 className="text-[#03373D] mb-10 text-4xl font-extrabold text-center">
         We've helped thousands of sales teams
       </h3>
 

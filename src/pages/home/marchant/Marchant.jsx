@@ -14,10 +14,10 @@ const Marchant = () => {
           every corner of Bangladesh right on time.
         </p>
         <div className="flex  gap-4">
-          <button className="px-4 py-6 text-black rounded-full border-2 font-semibold text-xl bg-[#CAEB66]">
+          <button className="px-4 py-4 text-black rounded-full  font-semibold text-md bg-[#CAEB66]">
             Become a Merchant
           </button>
-          <button className="px-4 py-6 text-white font-semibold text-xl rounded-full border-2 border-[#CAEB66]">
+          <button className="px-4 py-4 text-white font-semibold text-bd rounded-full border-2 border-[#CAEB66]">
             Earn with ZapShift Courier
           </button>
         </div>
