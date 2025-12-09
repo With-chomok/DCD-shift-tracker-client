@@ -20,6 +20,11 @@ font-size: 40px;
 color: white;
 font-weight: bold;
 }
+.heading-black {
+font-size: 40px;
+color: black;
+font-weight: bolder;
+}
 .amber-button{
   font-size: 20;
   color: #1F1F1F;

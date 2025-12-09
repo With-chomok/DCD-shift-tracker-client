@@ -6,7 +6,9 @@ import About from "../pages/about/About/About";
 import AuthLayout from "../layout/AuthLayout";
 import Login from "../pages/auth/login/Login";
 import Register from "../pages/auth/register/Register";
-
+import Rider from "../pages/Rider/Rider";
+import PrivateRoute from "./PrivateRoute";
+import SendPercel from "../pages/sendparcel/SendPercel";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +26,14 @@ export const router = createBrowserRouter([
       {
         path:"/about",
         Component: About
+      },
+      {
+        path:"/rider",
+        element:  <PrivateRoute><Rider></Rider></PrivateRoute>
+      },
+      {
+        path:"/sendparcel",
+        element: <PrivateRoute><SendPercel></SendPercel></PrivateRoute>
       }
     ],
   },

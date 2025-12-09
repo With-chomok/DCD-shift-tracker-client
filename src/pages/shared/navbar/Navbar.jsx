@@ -1,8 +1,18 @@
 import React from "react";
 import Logo from "../../../components/Logo/Logo";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import exLogo from "../../../assets/ex.png";
+import useAuth from "../../../hooks/useAuth";
 export const Navbar = () => {
+  const { user, logOut} = useAuth();
+
+  const handleLogOut = () => {
+    logOut()
+    .then()
+    .catch(err => {
+      console.log(err);
+    })
+  }
   const links = (
     <>
       <li>
@@ -18,7 +28,10 @@ export const Navbar = () => {
         <NavLink>Pricing</NavLink>
       </li>
       <li>
-        <NavLink>Be a Rider</NavLink>
+        <NavLink to="/sendparcel">Send Parcel</NavLink>
+      </li>
+      <li>
+        <NavLink to="/rider">Be a Rider</NavLink>
       </li>
     </>
   );
@@ -48,17 +61,22 @@ export const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className=" text-xl">
+        <Link to="/" className=" text-xl">
           <Logo></Logo>
-        </a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end gap-3">
-        <a className="white-button">Sign In</a>
-        <div className="flex"> 
-          <a className="amber-button"> Be a rider</a>
+        {user ? (
+          <Link onClick={handleLogOut} className="white-button">Sign Out</Link>
+        ) : (
+          <Link to="login" className="white-button">Sign In</Link>
+        )}
+
+        <div className="flex">
+          <Link to="/rider" className="amber-button"> Be a rider</Link>
           <img className="w-14 ml-0" src={exLogo} alt="" />
         </div>
       </div>

@@ -1,27 +1,65 @@
-import React from 'react';
-import { AuthContext } from './AuthContext';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../firebase/firebase.init';
 
-const AuthProvider = ({children}) => {
-    const registerUser = (email, password) => {
-        
-        return createUserWithEmailAndPassword(auth, email, password)
-    }
-    const signInUser = (email, password)=> {
-        return signInWithEmailAndPassword(auth, email, password)
-    }
-    const authInfo = {
-        registerUser,
-        signInUser
-    }
+import { AuthContext } from "./AuthContext";
+import {
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
+import { auth } from "../../firebase/firebase.init";
+import { useEffect, useState } from "react";
 
 
-    return (
-        <AuthContext value={authInfo}>
-            {children}
-        </AuthContext>
-    );
+const googleProvider = new GoogleAuthProvider();
+
+const AuthProvider = ({ children }) => {
+
+const [user, setUser] = useState(null);
+const [loading, setLoading] = useState(true)
+
+
+  const registerUser = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
+  const signInUser = (email, password) => {
+      setLoading(true)
+    return signInWithEmailAndPassword(auth, email, password)
+  };
+  const googleSignUp = () =>{
+      setLoading(true)
+    return signInWithPopup(auth, googleProvider)
+  }
+ const logOut = ()=> {
+    setLoading(true)
+    return signOut(auth)
+ }
+const updateUserProfile = (profile) => {
+  return updateProfile(auth.currentUser, profile)
+}
+
+  useEffect (() => {
+    const unSubscribe = onAuthStateChanged(auth, (currentUser)=> {
+        setUser(currentUser);
+        setLoading(false)
+    })
+    return () => {
+        unSubscribe();
+    }
+  }, [])
+  const authInfo = {
+    registerUser,
+    signInUser,
+    googleSignUp,
+    logOut,
+    user,
+    loading,
+    updateUserProfile
+  };
+
+  return <AuthContext value={authInfo}>{children}</AuthContext>;
 };
 
 export default AuthProvider;
